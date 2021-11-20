@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Game.Domain\Game.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\" />
+  </ItemGroup>
+
 </Project>

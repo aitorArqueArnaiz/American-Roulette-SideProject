@@ -1,3 +1,5 @@
+using Game.Domain.Interfaces;
+using Game.Domain.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -32,6 +34,10 @@ namespace Game
             {
                 options.Filters.Add(new ErrorHandlingFilter());
             });
+
+            // Add application services.
+            services.Add(new ServiceDescriptor(typeof(IGameService), new GameService()));
+
 
             // Add logging service
             services.AddLogging(configure => configure.AddConsole());
