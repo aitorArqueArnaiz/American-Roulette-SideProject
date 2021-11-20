@@ -26,3 +26,9 @@ C:\Users\aitor\source\repos\DDDPatterns\obj\Debug\net5.0\Game.API.dll
 C:\Users\aitor\source\repos\DDDPatterns\obj\Debug\net5.0\ref\Game.API.dll
 C:\Users\aitor\source\repos\DDDPatterns\obj\Debug\net5.0\Game.API.pdb
 C:\Users\aitor\source\repos\DDDPatterns\obj\Debug\net5.0\Game.API.genruntimeconfig.cache
+C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\net5.0\Serilog.dll
+C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\net5.0\Game.Domain.dll
+C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\net5.0\Game.Infrastructure.dll
+C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\net5.0\Game.Domain.pdb
+C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\net5.0\Game.Infrastructure.pdb

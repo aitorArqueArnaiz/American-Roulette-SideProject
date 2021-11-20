@@ -13,3 +13,4 @@ C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\Game.API.runtimeconfig.dev.jso
 C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\Game.API.exe
 C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\Game.API.dll
 C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\Game.API.pdb
+C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\Serilog.dll
