@@ -23,33 +23,33 @@ namespace Game.Domain.Services
             return 0.0;
         }
 
-        public double betDivided(int number)
+        public double betDivided(string number)
         {
             return 0;
         }
 
 
-        public double BetStreet(int number)
+        public double BetStreet(string number)
         {
             return 0;
         }
 
-        public double BetCorner(int number)
+        public double BetCorner(string number)
         {
             return 0;
         }
 
-        public double BetFiveNumbers(int number)
+        public double BetFiveNumbers(string number)
         {
             return 0;
         }
 
-        public double BetLine(int number)
+        public double BetLine(string number)
         {
             return 0;
         }
 
-        public double betDozen(int number)
+        public double betDozen(string number)
         {
             return 0;
         }
@@ -59,21 +59,21 @@ namespace Game.Domain.Services
             return 0;
         }
 
-        public double betDoubleDozen(int number)
+        public double betDoubleDozen(string number)
         {
             return 0;
         }
 
-        public double BetDoubleColumn(int number)
+        public double BetDoubleColumn(string number)
         {
             return 0;
         }
-        public double BetColors(int number)
+        public double BetColors(string number)
         {
             return 0;
         }
 
-        public double BetOdds(int number)
+        public double BetOdds(string number)
         {
             return 0;
         }

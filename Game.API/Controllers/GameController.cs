@@ -33,14 +33,14 @@ namespace Game.Controllers
         #region Endpoints
 
         [HttpGet]
-        public async Task<ActionResult> Bet(int betType, int number)
+        public async Task<ActionResult> Bet(int betType, string number, string winningNumber, int bet)
         {
             try
             {
                 switch(betType)
                 {
                     case (int)BetType.Direct:
-                        _gameService.BetDirect(number);
+                        _gameService.BetDirect(number, winningNumber, bet);
                         break;
                     case (int)BetType.Divided:
                         _gameService.betDivided(number);

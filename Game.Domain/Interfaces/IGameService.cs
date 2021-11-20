@@ -23,76 +23,76 @@ namespace Game.Domain.Interfaces
         /// </summary>
         /// <param name="number"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double betDivided(int number);
+        double betDivided(string number);
 
         /// <summary>
         /// Method that proceses the street bet.
         /// </summary>
         /// <param name="number"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double BetStreet(int number);
+        double BetStreet(string number);
 
         /// <summary>
         /// Method that proceses the corner bet.
         /// </summary>
         /// <param name="number"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double BetCorner(int number);
+        double BetCorner(string number);
 
         /// <summary>
         /// Method that proceses the five numbers bet.
         /// </summary>
         /// <param name="number"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double BetFiveNumbers(int number);
+        double BetFiveNumbers(string number);
 
         /// <summary>
         /// Method that proceses the line bet.
         /// </summary>
         /// <param name="number"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double BetLine(int number);
+        double BetLine(string number);
 
         /// <summary>
         /// Method that proceses the dozen bet.
         /// </summary>
         /// <param name="number"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double betDozen(int number);
+        double betDozen(string number);
 
         /// <summary>
         /// Method that proceses the column bet.
         /// </summary>
         /// <param name="number"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double BetColumn(int number);
+        double BetColumn(string number);
 
         /// <summary>
         /// Method that proceses the double dozen bet.
         /// </summary>
         /// <param name="number"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double betDoubleDozen(int number);
+        double betDoubleDozen(string number);
 
         /// <summary>
         /// Method that proceses the double column bet.
         /// </summary>
         /// <param name="number"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double BetDoubleColumn(int number);
+        double BetDoubleColumn(string number);
 
         /// <summary>
         /// Method that proceses the color's bet.
         /// </summary>
         /// <param name="number"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double BetColors(int number);
+        double BetColors(string number);
 
         /// <summary>
         /// Method that proceses the odd or even bet.
         /// </summary>
         /// <param name="number"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double BetOdds(int number);
+        double BetOdds(string number);
     }
 }
