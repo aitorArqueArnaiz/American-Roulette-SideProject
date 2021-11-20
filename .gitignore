@@ -1,0 +1,14 @@
+obj
+bin
+
+.vs
+.git
+
+/Game.API/bin
+/Game.API/obj
+/Game.Domain/bin
+/Game.Domain/obj
+/Game.Infrastructure/bin
+/Game.Infrastructure/bin
+/Game.Test/bin
+/Game.Test/obj
