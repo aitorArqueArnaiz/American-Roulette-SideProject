@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿/// <summary>
+///  This class implements the yankee roulette game.
+/// </summary>
+
+
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 
@@ -16,7 +21,7 @@ namespace Game.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Get()
+        public async Task<ActionResult> BetColor()
         {
             return Ok();
         }
