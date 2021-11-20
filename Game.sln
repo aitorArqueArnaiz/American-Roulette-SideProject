@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.Test", "Game.Test\Game
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Game.API", "Game.API\Game.API.csproj", "{07B89E63-C16F-4614-87C9-B68E1377B7E7}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9A9640F8-D43C-4DAB-B0DE-CC9C55B3E019}"
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{372D5523-C427-48BF-8174-F673BFDD1F74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{07B89E63-C16F-4614-87C9-B68E1377B7E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07B89E63-C16F-4614-87C9-B68E1377B7E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07B89E63-C16F-4614-87C9-B68E1377B7E7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A9640F8-D43C-4DAB-B0DE-CC9C55B3E019}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A9640F8-D43C-4DAB-B0DE-CC9C55B3E019}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A9640F8-D43C-4DAB-B0DE-CC9C55B3E019}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A9640F8-D43C-4DAB-B0DE-CC9C55B3E019}.Release|Any CPU.Build.0 = Release|Any CPU
+		{372D5523-C427-48BF-8174-F673BFDD1F74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{372D5523-C427-48BF-8174-F673BFDD1F74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{372D5523-C427-48BF-8174-F673BFDD1F74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{372D5523-C427-48BF-8174-F673BFDD1F74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
