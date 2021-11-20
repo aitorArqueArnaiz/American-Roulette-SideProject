@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Game.Domain.Entities
 {
-    public class Player
+    public class Player  BaseEntity
     {
     }
 }
