@@ -1,7 +1,7 @@
 services:
   dddpatterns:
     build:
-      context: C:\Users\aitor\source\repos\DDDPatterns
+      context: C:\Users\aitor\source\repos\Game
       dockerfile: Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
@@ -31,4 +31,4 @@ services:
         create_host_path: true
 networks:
   default:
-    name: dockercompose5893906218243863146_default
+    name: dockercompose3181605461316980595_default
