@@ -1,3 +1,5 @@
+using Game.Domain.Interfaces;
+using Game.Domain.Services;
 using NUnit.Framework;
 
 namespace Game.UnitTest
@@ -6,7 +8,7 @@ namespace Game.UnitTest
     {
         #region class variables
 
-
+        private IGameService _gameService;
 
         #endregion
 
@@ -15,6 +17,7 @@ namespace Game.UnitTest
         [SetUp]
         public void Setup()
         {
+            _gameService = new GameService();
         }
 
         [TearDown]
@@ -32,11 +35,15 @@ namespace Game.UnitTest
         public void Bet_Direct_test()
         {
             // Arrange
+            string number = "32";
+            int bet = 100;
 
             // Act
+            var ammount = _gameService.BetDirect(number, "32", bet);
 
             // Assert
-            Assert.Pass();
+            Assert.NotNull(ammount);
+            Assert.AreEqual(ammount, 3500.00);
         }
 
         [Test]
