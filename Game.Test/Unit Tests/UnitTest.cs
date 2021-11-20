@@ -146,7 +146,7 @@ namespace Game.UnitTest
         [Test]
         [Author("Aitor Arqué Arnaiz")]
         [Description("Bet double column use case")]
-        public void Bet_Doublee_Column_test()
+        public void Bet_Double_Column_test()
         {
             // Arrange
 

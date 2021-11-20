@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading.Tasks;
+using static Game.Domain.Shared.Enums;
 
 namespace Game.Controllers
 {
@@ -31,167 +32,52 @@ namespace Game.Controllers
 
         #region Endpoints
 
-        // -------------------------------------------- INTERNAL BETS -------------------------------------------------------------
         [HttpGet]
-        public async Task<ActionResult> BetDirect()
+        public async Task<ActionResult> Bet(int betType, int number)
         {
             try
             {
-                return Ok();
-            }
-            catch (Exception error)
-            {
-                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
-                return BadRequest(error.Message);
-            }
-        }
-
-        [HttpGet]
-        public async Task<ActionResult> BetDivided()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception error)
-            {
-                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
-                return BadRequest(error.Message);
-            }
-        }
-
-        [HttpGet]
-        public async Task<ActionResult> betStreet()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception error)
-            {
-                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
-                return BadRequest(error.Message);
-            }
-        }
-
-        [HttpGet]
-        public async Task<ActionResult> betCorner()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception error)
-            {
-                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
-                return BadRequest(error.Message);
-            }
-        }
-
-        [HttpGet]
-        public async Task<ActionResult> BetFiveNumbers()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception error)
-            {
-                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
-                return BadRequest(error.Message);
-            }
-        }
-
-        [HttpGet]
-        public async Task<ActionResult> BetLine()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception error)
-            {
-                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
-                return BadRequest(error.Message);
-            }
-        }
-
-        // -------------------------------------------- EXTERNAL BETS -------------------------------------------------------------
-        [HttpGet]
-        public async Task<ActionResult> BetDozen()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception error)
-            {
-                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
-                return BadRequest(error.Message);
-            }
-        }
-
-        [HttpGet]
-        public async Task<ActionResult> BetColumn()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception error)
-            {
-                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
-                return BadRequest(error.Message);
-            }
-        }
-
-        [HttpGet]
-        public async Task<ActionResult> BetDoubleDozen()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception error)
-            {
-                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
-                return BadRequest(error.Message);
-            }
-        }
-
-        [HttpGet]
-        public async Task<ActionResult> BetDoubleColumn()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception error)
-            {
-                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
-                return BadRequest(error.Message);
-            }
-        }
-
-        [HttpGet]
-        public async Task<ActionResult> BetColors()
-        {
-            try
-            {
-                return Ok();
-            }
-            catch (Exception error)
-            {
-                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
-                return BadRequest(error.Message);
-            }
-        }
-
-        [HttpGet]
-        public async Task<ActionResult> BetOdds()
-        {
-            try
-            {
+                switch(betType)
+                {
+                    case (int)BetType.Direct:
+                        _gameService.BetDirect(number);
+                        break;
+                    case (int)BetType.Divided:
+                        _gameService.betDivided(number);
+                        break;
+                    case (int)BetType.Street:
+                        _gameService.BetStreet(number);
+                        break;
+                    case (int)BetType.Corner:
+                        _gameService.BetCorner(number);
+                        break;
+                    case (int)BetType.FiveNumbers:
+                        _gameService.BetFiveNumbers(number);
+                        break;
+                    case (int)BetType.Line:
+                        _gameService.BetLine(number);
+                        break;
+                    case (int)BetType.Dozen:
+                        _gameService.betDozen(number);
+                        break;
+                    case (int)BetType.Column:
+                        _gameService.BetColumn(number);
+                        break;
+                    case (int)BetType.DoubleDozen:
+                        _gameService.betDoubleDozen(number);
+                        break;
+                    case (int)BetType.DoubleColumn:
+                        _gameService.BetDoubleColumn(number);
+                        break;
+                    case (int)BetType.Color:
+                        _gameService.BetColors(number);
+                        break;
+                    case (int)BetType.Odd:
+                        _gameService.BetOdds(number);
+                        break;
+                    default:
+                        break;
+                }
                 return Ok();
             }
             catch (Exception error)
