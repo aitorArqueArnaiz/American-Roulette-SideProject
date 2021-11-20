@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P9mLqhEy/ELkvLWHCKTcuMxWWdKuG7IWCtCmw/oqSkgSjKrhbOrAQm23DNsBr7zqLhyx2Dp3nKaFk09Bg1FSYA==",
+  "dgSpecHash": "ree3WWGSTQnI8qyszlU7lVcw8UIkMnlPHaP5hwwfCUO7gqPSeRz7/Jg2TOzQfgFvckHy3lOU7F+yjc7yY3V9gA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aitor\\source\\repos\\DDDPatterns\\DDDPatterns.csproj",
+  "projectFilePath": "C:\\Users\\aitor\\source\\repos\\DDDPatterns\\Game.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\aitor\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\aitor\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

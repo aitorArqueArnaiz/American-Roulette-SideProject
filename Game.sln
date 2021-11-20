@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.31911.260
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.API", "Game.API.csproj", "{0D1FC28A-7AB6-446B-991D-DF26A1EB8446}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9CF05D37-961D-4C03-9092-8759EF911362}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9AECA670-5665-4A32-9E54-B95F3B9F5035}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Domain", "..\Game.Domain\Game.Domain.csproj", "{C12019B9-F41C-4C0B-AA0B-56F829FCC548}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Infrastructure", "..\Game.Infrastructure\Game.Infrastructure.csproj", "{E8BFA0CC-52C8-440A-B5FE-DB8B83C1A9DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game.Test", "..\Game.Test\Game.Test.csproj", "{3A33CC78-8F8C-4A00-92BA-E19B0300C32E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0D1FC28A-7AB6-446B-991D-DF26A1EB8446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D1FC28A-7AB6-446B-991D-DF26A1EB8446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D1FC28A-7AB6-446B-991D-DF26A1EB8446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D1FC28A-7AB6-446B-991D-DF26A1EB8446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CF05D37-961D-4C03-9092-8759EF911362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF05D37-961D-4C03-9092-8759EF911362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF05D37-961D-4C03-9092-8759EF911362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF05D37-961D-4C03-9092-8759EF911362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C12019B9-F41C-4C0B-AA0B-56F829FCC548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C12019B9-F41C-4C0B-AA0B-56F829FCC548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C12019B9-F41C-4C0B-AA0B-56F829FCC548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C12019B9-F41C-4C0B-AA0B-56F829FCC548}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8BFA0CC-52C8-440A-B5FE-DB8B83C1A9DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8BFA0CC-52C8-440A-B5FE-DB8B83C1A9DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8BFA0CC-52C8-440A-B5FE-DB8B83C1A9DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8BFA0CC-52C8-440A-B5FE-DB8B83C1A9DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A33CC78-8F8C-4A00-92BA-E19B0300C32E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A33CC78-8F8C-4A00-92BA-E19B0300C32E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A33CC78-8F8C-4A00-92BA-E19B0300C32E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A33CC78-8F8C-4A00-92BA-E19B0300C32E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01DD80DE-6A63-489A-B566-41D9D271D47F}
+	EndGlobalSection
+EndGlobal

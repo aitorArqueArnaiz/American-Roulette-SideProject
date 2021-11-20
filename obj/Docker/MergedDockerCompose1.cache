@@ -5,9 +5,9 @@ services:
       dockerfile: Dockerfile
       labels:
         com.microsoft.created-by: visual-studio
-        com.microsoft.visual-studio.project-name: DDDPatterns
+        com.microsoft.visual-studio.project-name: Game
       target: base
-    container_name: DDDPatterns
+    container_name: Game
     entrypoint:
     - tail
     - -f
@@ -20,7 +20,7 @@ services:
       NUGET_FALLBACK_PACKAGES: ""
     image: dddpatterns:dev
     labels:
-      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/DDDPatterns.dll"'
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  ""'
       com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
         dotnet); then kill $$PID; fi"
       com.microsoft.visualstudio.debuggee.program: dotnet

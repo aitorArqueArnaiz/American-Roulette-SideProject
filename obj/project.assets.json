@@ -285,9 +285,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aitor\\source\\repos\\DDDPatterns\\DDDPatterns.csproj",
-      "projectName": "DDDPatterns",
-      "projectPath": "C:\\Users\\aitor\\source\\repos\\DDDPatterns\\DDDPatterns.csproj",
+      "projectUniqueName": "C:\\Users\\aitor\\source\\repos\\DDDPatterns\\Game.API.csproj",
+      "projectName": "Game.API",
+      "projectPath": "C:\\Users\\aitor\\source\\repos\\DDDPatterns\\Game.API.csproj",
       "packagesPath": "C:\\Users\\aitor\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\aitor\\source\\repos\\DDDPatterns\\obj\\",
       "projectStyle": "PackageReference",
