@@ -35,74 +35,170 @@ namespace Game.Controllers
         [HttpGet]
         public async Task<ActionResult> BetDirect()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                return BadRequest(error.Message);
+            }
         }
 
         [HttpGet]
         public async Task<ActionResult> BetDivided()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                return BadRequest(error.Message);
+            }
         }
 
         [HttpGet]
         public async Task<ActionResult> betStreet()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                return BadRequest(error.Message);
+            }
         }
 
         [HttpGet]
         public async Task<ActionResult> betCorner()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                return BadRequest(error.Message);
+            }
         }
 
         [HttpGet]
         public async Task<ActionResult> BetFiveNumbers()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                return BadRequest(error.Message);
+            }
         }
 
         [HttpGet]
         public async Task<ActionResult> BetLine()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                return BadRequest(error.Message);
+            }
         }
 
         // -------------------------------------------- EXTERNAL BETS -------------------------------------------------------------
         [HttpGet]
         public async Task<ActionResult> BetDozen()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                return BadRequest(error.Message);
+            }
         }
 
         [HttpGet]
         public async Task<ActionResult> BetColumn()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                return BadRequest(error.Message);
+            }
         }
 
         [HttpGet]
         public async Task<ActionResult> BetDoubleDozen()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                return BadRequest(error.Message);
+            }
         }
 
         [HttpGet]
         public async Task<ActionResult> BetDoubleColumn()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                return BadRequest(error.Message);
+            }
         }
 
         [HttpGet]
         public async Task<ActionResult> BetColors()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                return BadRequest(error.Message);
+            }
         }
 
         [HttpGet]
         public async Task<ActionResult> BetOdds()
         {
-            return Ok();
+            try
+            {
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                return BadRequest(error.Message);
+            }
         }
 
         #endregion
