@@ -30,3 +30,4 @@ C:\Users\aitor\source\repos\Game\Game.API\obj\Debug\net5.0\Game.API.dll
 C:\Users\aitor\source\repos\Game\Game.API\obj\Debug\net5.0\ref\Game.API.dll
 C:\Users\aitor\source\repos\Game\Game.API\obj\Debug\net5.0\Game.API.pdb
 C:\Users\aitor\source\repos\Game\Game.API\obj\Debug\net5.0\Game.API.genruntimeconfig.cache
+C:\Users\aitor\source\repos\Game\Game.API\bin\Debug\net5.0\appsettings.json

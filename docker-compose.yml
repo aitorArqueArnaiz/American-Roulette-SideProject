@@ -1,8 +1,8 @@
 version: '3.4'
 
 services:
-  dddpatterns:
-    image: ${DOCKER_REGISTRY-}dddpatterns
+  game.api:
+    image: ${DOCKER_REGISTRY-}gameapi
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Game.API/Dockerfile

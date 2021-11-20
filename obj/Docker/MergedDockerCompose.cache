@@ -1,12 +1,12 @@
 services:
-  dddpatterns:
+  game.api:
     build:
       context: C:\Users\aitor\source\repos\Game
-      dockerfile: Dockerfile
+      dockerfile: Game.API/Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       ASPNETCORE_URLS: https://+:443;http://+:80
-    image: dddpatterns
+    image: gameapi
     networks:
       default: null
     ports:

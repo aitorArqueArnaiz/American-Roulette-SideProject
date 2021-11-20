@@ -15,3 +15,16 @@ C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\Game.API.dll
 C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\Game.API.pdb
 C:\Users\aitor\source\repos\DDDPatterns\bin\Debug\Serilog.dll
 C:\Users\aitor\source\repos\Game\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\aitor\source\repos\Game\bin\Debug\Game.API.deps.json
+C:\Users\aitor\source\repos\Game\bin\Debug\Game.API.runtimeconfig.json
+C:\Users\aitor\source\repos\Game\bin\Debug\Game.API.runtimeconfig.dev.json
+C:\Users\aitor\source\repos\Game\bin\Debug\Game.API.exe
+C:\Users\aitor\source\repos\Game\bin\Debug\Game.API.dll
+C:\Users\aitor\source\repos\Game\bin\Debug\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\aitor\source\repos\Game\bin\Debug\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\aitor\source\repos\Game\bin\Debug\Serilog.dll
+C:\Users\aitor\source\repos\Game\bin\Debug\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\aitor\source\repos\Game\bin\Debug\Microsoft.OpenApi.dll
+C:\Users\aitor\source\repos\Game\bin\Debug\Game.API.pdb
+C:\Users\aitor\source\repos\Game\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+C:\Users\aitor\source\repos\Game\obj\Debug\docker-compose.dcproj.CopyComplete

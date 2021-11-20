@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace DDDPatterns
+namespace Game
 {
     public class Startup
     {
@@ -24,7 +24,7 @@ namespace DDDPatterns
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "DDDPatterns", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Game", Version = "v1" });
             });
 
             // Add framework services.
