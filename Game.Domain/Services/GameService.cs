@@ -54,7 +54,7 @@ namespace Game.Domain.Services
             return 0;
         }
 
-        public double BetColumn(int number)
+        public double BetColumn(string number)
         {
             return 0;
         }
