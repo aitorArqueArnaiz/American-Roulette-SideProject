@@ -4,15 +4,40 @@ namespace Game.IntegrationTest
 {
     public class IntegrationTest
     {
+        #region Variables & properties
+
+
+
+        #endregion
+
+        #region Set Up
+
         [SetUp]
         public void Setup()
         {
         }
 
-        [Test]
-        public void Test1()
+        [TearDown]
+        public void TearDown()
         {
+
+        }
+        #endregion
+
+        #region tests
+
+        [Test]
+        public void Bet()
+        {
+            // Arrange
+
+            // Act
+
+            // Assert
             Assert.Pass();
         }
+
+        #endregion
+
     }
 }
