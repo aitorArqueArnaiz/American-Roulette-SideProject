@@ -3,7 +3,7 @@ namespace Game.Domain.Interfaces
 {
     public interface IGameService
     {
-        int Bet();
+        int Spin();
 
         double BetDirect(int number);
 

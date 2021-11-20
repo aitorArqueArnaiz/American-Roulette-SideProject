@@ -1,12 +1,14 @@
 ﻿using Game.Domain.Interfaces;
+using System;
 
 namespace Game.Domain.Services
 {
     public class GameService : IGameService
     {
-        public int Bet()
+        public int Spin()
         {
-            return 0;
+            var bet = new Random();
+            return bet.Next(0, 36);
         }
 
         public double BetDirect(int number)

@@ -18,5 +18,12 @@ namespace Game.Domain.Shared
             Color =11,
             Odd = 12
         }
+
+        public enum GameState
+        {
+            Waiting = 1,
+            Playing = 2,
+            Processing = 3
+        }
     }
 }
