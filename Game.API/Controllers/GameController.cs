@@ -87,6 +87,22 @@ namespace Game.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<ActionResult> Spin(int betType, int number)
+        {
+            try
+            {
+                _gameService.Spin();
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during spin operation {error.Message}");
+                return NotFound(error.Message);
+            }
+        }
+
+
         #endregion
     }
 }

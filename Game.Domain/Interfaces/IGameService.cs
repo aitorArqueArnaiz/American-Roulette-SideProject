@@ -13,8 +13,10 @@ namespace Game.Domain.Interfaces
         /// Method that proceses the direct bet.
         /// </summary>
         /// <param name="number"></param>
+        /// <param name="winningNumber"></param>
+        /// <param name="bet"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double BetDirect(int number);
+        double BetDirect(string number, string winningNumber, int bet);
 
         /// <summary>
         /// Method that proceses the divided bet.

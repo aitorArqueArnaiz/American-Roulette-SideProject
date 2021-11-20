@@ -11,9 +11,16 @@ namespace Game.Domain.Services
             return bet.Next(0, 36);
         }
 
-        public double BetDirect(int number)
+        public double BetDirect(string number, string winningNumber, int bet)
         {
-            return 0;
+            // TODO : Check in roulette model that the betting number exists in the game.
+            if(winningNumber == number ||
+                number == "0" || 
+                number == "00")
+            {
+                return 35 * bet;
+            }
+            return 0.0;
         }
 
         public double betDivided(int number)
