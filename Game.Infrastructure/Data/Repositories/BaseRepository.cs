@@ -20,26 +20,26 @@ namespace Game.Infrastructure.Data.Repositories
             return this.Bets.AsQueryable().ToListAsync();
         }
 
-        Task<TEntity> IBaseRepository<TEntity>.Get(int id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public async Task<TEntity> Add(TEntity entity)
+        public void Add(TEntity entity)
         {
             this.Bets.Add(entity);
             base.SaveChanges();
-            return entity;
         }
 
-        public Task<TEntity> Update(TEntity entity)
+        public void AddRange(List<Entity> userBets)
         {
-            throw new System.NotImplementedException();
+            this.Bets.AddRange((IEnumerable<TEntity>)userBets);
+            base.SaveChanges();
         }
 
-        Task<TEntity> IBaseRepository<TEntity>.Delete(int id)
+        public void Update(TEntity entity)
         {
-            throw new System.NotImplementedException();
+            this.Bets.Update(entity);
+        }
+
+        public void Delete(TEntity entity)
+        {
+            this.Bets.Remove(entity);
         }
 
         public Task<TEntity> Find(int id)

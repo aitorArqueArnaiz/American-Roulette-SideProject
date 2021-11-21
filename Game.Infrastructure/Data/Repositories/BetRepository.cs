@@ -11,9 +11,9 @@ namespace Game.Infrastructure.Data.Repositories
         {
         }
 
-        public async Task<Entity> AddEntityAsync(Entity entity)
+        public void AddEntityAsync(Entity entity)
         {
-            return await base.Add(entity);
+            base.Add(entity);
         }
     }
 }
