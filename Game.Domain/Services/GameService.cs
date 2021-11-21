@@ -5,6 +5,7 @@ using Game.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using static Game.Domain.Shared.Enums;
 
 namespace Game.Domain.Services
 {
@@ -38,6 +39,7 @@ namespace Game.Domain.Services
 
         public void UserBet(Bet bet)
         {
+            if (bet == null || bet.bet.type == (int)BetType.Undefined) throw new Exception($"Undefined bet type for user bet {bet.bet.Id}");
             _betRepository.Add(bet.bet);
         }
 

@@ -45,8 +45,8 @@ namespace Game.UnitTest
 
         [Test]
         [Author("Aitor Arqué Arnaiz")]
-        [Description("Bet direct use case")]
-        public void Bet_Direct_test()
+        [Description("User makes a bet use case test")]
+        public void UserBet_Test()
         {
             // Arrange
             var bet = new Bet()
@@ -70,6 +70,34 @@ namespace Game.UnitTest
             Assert.AreEqual(result.Number, bet.bet.Number);
             Assert.AreEqual(result.ammount, bet.bet.ammount);
             Assert.AreEqual(result.type, bet.bet.type);
+        }
+
+        [Test]
+        [Author("Aitor Arqué Arnaiz")]
+        [Description("User makes a bet use case test")]
+        public void UserBet_Null_Bet_Test()
+        {
+            // Arrange
+            var bet = new Bet()
+            {
+                bet = new Entity()
+                {
+                    Id = 123456,
+                    Number = 36,
+                    ammount = 100,
+                    type = (int)BetType.Undefined
+                }
+            };
+
+            // Act && Assert exception
+            Assert.Throws<Exception>(() => _gameService.UserBet(bet));
+        }
+
+        [Test]
+        [Author("Aitor Arqué Arnaiz")]
+        [Description("Bet direct use case")]
+        public void Bet_Direct_test()
+        {
         }
 
         [Test]
