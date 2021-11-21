@@ -74,7 +74,7 @@ namespace Game.UnitTest
 
         [Test]
         [Author("Aitor Arqué Arnaiz")]
-        [Description("User makes a bet use case test")]
+        [Description("User makes a NULL/UNDEFINED bet and and EXCEPTION in thrown")]
         public void UserBet_Null_Bet_Test()
         {
             // Arrange
