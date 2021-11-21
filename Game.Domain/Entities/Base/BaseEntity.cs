@@ -1,9 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Game.Domain.Entities
 {
@@ -15,6 +11,7 @@ namespace Game.Domain.Entities
         }
 
         [JsonProperty("Id")]
+        [ForeignKey("Id")]
         public long Id { get; set; }
     }
 }

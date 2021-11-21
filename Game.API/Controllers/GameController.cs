@@ -3,6 +3,7 @@
 /// </summary>
 
 
+using Game.Domain.Entities;
 using Game.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -33,47 +34,47 @@ namespace Game.Controllers
         #region Endpoints
 
         [HttpPost]
-        public async Task<ActionResult> Bet(int betType, string number, int bet)
+        public async Task<ActionResult> ProcesBet([FromBody] Bet bet)
         {
             try
             {
-                switch(betType)
+                switch(bet.type)
                 {
-                    case (int)BetType.Direct:
-                        _gameService.ProcesBetDirect(number, bet);
+                    case BetType.Direct:
+                        _gameService.ProcesBetDirect(bet);
                         break;
-                    case (int)BetType.Divided:
-                        _gameService.ProcesBetDivided(number);
+                    case BetType.Divided:
+                        _gameService.ProcesBetDivided(bet);
                         break;
-                    case (int)BetType.Street:
-                        _gameService.ProcesBetStreet(number);
+                    case BetType.Street:
+                        _gameService.ProcesBetStreet(bet);
                         break;
-                    case (int)BetType.Corner:
-                        _gameService.ProcesBetCorner(number);
+                    case BetType.Corner:
+                        _gameService.ProcesBetCorner(bet);
                         break;
-                    case (int)BetType.FiveNumbers:
-                        _gameService.ProcesBetFiveNumbers(number);
+                    case BetType.FiveNumbers:
+                        _gameService.ProcesBetFiveNumbers(bet);
                         break;
-                    case (int)BetType.Line:
-                        _gameService.ProcesBetLine(number);
+                    case BetType.Line:
+                        _gameService.ProcesBetLine(bet);
                         break;
-                    case (int)BetType.Dozen:
-                        _gameService.ProcesBetDozen(number);
+                    case BetType.Dozen:
+                        _gameService.ProcesBetDozen(bet);
                         break;
-                    case (int)BetType.Column:
-                        _gameService.ProcesBetColumn(number);
+                    case BetType.Column:
+                        _gameService.ProcesBetColumn(bet);
                         break;
-                    case (int)BetType.DoubleDozen:
-                        _gameService.ProcesBetDoubleDozen(number);
+                    case BetType.DoubleDozen:
+                        _gameService.ProcesBetDoubleDozen(bet);
                         break;
-                    case (int)BetType.DoubleColumn:
-                        _gameService.ProcesBetDoubleColumn(number);
+                    case BetType.DoubleColumn:
+                        _gameService.ProcesBetDoubleColumn(bet);
                         break;
-                    case (int)BetType.Color:
-                        _gameService.ProcesBetColors(number);
+                    case BetType.Color:
+                        _gameService.ProcesBetColors(bet);
                         break;
-                    case (int)BetType.Odd:
-                        _gameService.ProcesBetOdds(number);
+                    case BetType.Odd:
+                        _gameService.ProcesBetOdds(bet);
                         break;
                     default:
                         break;
@@ -82,26 +83,40 @@ namespace Game.Controllers
             }
             catch (Exception error)
             {
-                _logger.LogError($"Error ocurred during user bet operation {error.Message}");
+                _logger.LogError($"Error ocurred during user process bet's operation {error.Message}");
                 return BadRequest(error.Message);
             }
         }
 
         [HttpGet]
-        public async Task<ActionResult> Spin(int betType, int number)
+        public async Task<ActionResult> Wheel()
         {
             try
             {
-                _gameService.Spin();
+                _gameService.Wheel();
                 return Ok();
             }
             catch (Exception error)
             {
-                _logger.LogError($"Error ocurred during spin operation {error.Message}");
+                _logger.LogError($"Error ocurred during wheel operation {error.Message}");
                 return NotFound(error.Message);
             }
         }
 
+        [HttpPut]
+        public async Task<ActionResult> Bet()
+        {
+            try
+            {
+                _gameService.UserBet();
+                return Ok();
+            }
+            catch (Exception error)
+            {
+                _logger.LogError($"Error ocurred during save the user bet operation {error.Message}");
+                return NotFound(error.Message);
+            }
+        }
 
         #endregion
     }

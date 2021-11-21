@@ -1,4 +1,6 @@
-﻿using Game.Domain.Interfaces;
+﻿using Game.Domain.Entities;
+using Game.Domain.Interfaces;
+using Game.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 
@@ -9,15 +11,27 @@ namespace Game.Domain.Services
         #region variables
 
         private List<string> _zeros = new List<string>() { "0", "00" };
+        private readonly IBaseRepository _betRepository;
+        private int wheel;
+
+        #endregion
+
+        #region Constructors
+
+        public GameService(IBaseRepository repository) : base()
+        {
+            _betRepository = repository ?? throw new ArgumentNullException(nameof(repository));
+            this.wheel = 0;
+        }
 
         #endregion
 
         #region Methods
 
-        public int Spin()
+        public void Wheel()
         {
             var bet = new Random();
-            return bet.Next(0, 36);
+            this.wheel = bet.Next(0, 36);
         }
 
         public void UserBet()
@@ -25,62 +39,62 @@ namespace Game.Domain.Services
 
         }
 
-        public double? ProcesBetDirect(string number, int bet)
+        public double? ProcesBetDirect(Bet bet)
         {
             return 0;
         }
 
-        public double ProcesBetDivided(string number)
+        public double ProcesBetDivided(Bet bet)
         {
             return 0;
         }
 
 
-        public double ProcesBetStreet(string number)
+        public double ProcesBetStreet(Bet bet)
         {
             return 0;
         }
 
-        public double ProcesBetCorner(string number)
+        public double ProcesBetCorner(Bet bet)
         {
             return 0;
         }
 
-        public double ProcesBetFiveNumbers(string number)
+        public double ProcesBetFiveNumbers(Bet bet)
         {
             return 0;
         }
 
-        public double ProcesBetLine(string number)
+        public double ProcesBetLine(Bet bet)
         {
             return 0;
         }
 
-        public double ProcesBetDozen(string number)
+        public double ProcesBetDozen(Bet bet)
         {
             return 0;
         }
 
-        public double ProcesBetColumn(string number)
+        public double ProcesBetColumn(Bet bet)
         {
             return 0;
         }
 
-        public double ProcesBetDoubleDozen(string number)
+        public double ProcesBetDoubleDozen(Bet bet)
         {
             return 0;
         }
 
-        public double ProcesBetDoubleColumn(string number)
+        public double ProcesBetDoubleColumn(Bet bet)
         {
             return 0;
         }
-        public double ProcesBetColors(string number)
+        public double ProcesBetColors(Bet bet)
         {
             return 0;
         }
 
-        public double ProcesBetOdds(string number)
+        public double ProcesBetOdds(Bet bet)
         {
             return 0;
         }

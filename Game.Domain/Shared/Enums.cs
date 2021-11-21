@@ -16,7 +16,8 @@ namespace Game.Domain.Shared
             DoubleDozen = 9,
             DoubleColumn = 10,
             Color =11,
-            Odd = 12
+            Odd = 12,
+            Undefined = 13
         }
 
         public enum GameState
