@@ -1,5 +1,7 @@
 using Game.Domain.Interfaces;
 using Game.Domain.Services;
+using Game.Infrastructure.Interfaces;
+using Moq;
 using NUnit.Framework;
 
 namespace Game.UnitTest
@@ -9,6 +11,7 @@ namespace Game.UnitTest
         #region class variables
 
         private IGameService _gameService;
+        private Mock<IBaseRepository> _repository;
 
         #endregion
 
@@ -17,7 +20,8 @@ namespace Game.UnitTest
         [SetUp]
         public void Setup()
         {
-            _gameService = new GameService();
+            _repository = new Mock<IBaseRepository>();
+            _gameService = new GameService(_repository.Object);
         }
 
         [TearDown]
