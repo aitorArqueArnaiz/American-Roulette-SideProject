@@ -64,7 +64,12 @@ namespace Game.UnitTest
             _gameService.UserBet(bet);
 
             // Assert
-            Assert.NotNull(_repository.Find((int)bet.Id).Result);
+            var result = _repository.Find((int)bet.bet.Id).Result;
+            Assert.NotNull(result);
+            Assert.AreEqual(result.Id, bet.bet.Id);
+            Assert.AreEqual(result.Number, bet.bet.Number);
+            Assert.AreEqual(result.ammount, bet.bet.ammount);
+            Assert.AreEqual(result.type, bet.bet.type);
         }
 
         [Test]

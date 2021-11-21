@@ -28,6 +28,7 @@ namespace Game.Infrastructure.Data.Repositories
         public async Task<TEntity> Add(TEntity entity)
         {
             this.Bets.Add(entity);
+            base.SaveChanges();
             return entity;
         }
 
@@ -43,7 +44,7 @@ namespace Game.Infrastructure.Data.Repositories
 
         public Task<TEntity> Find(int id)
         {
-            return this.Bets.FirstAsync(x => x.Id == id);
+            return this.Bets.SingleAsync(x => x.Id == id);
         }
     }
 }
