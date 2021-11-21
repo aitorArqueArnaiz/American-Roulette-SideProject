@@ -64,7 +64,7 @@ namespace Game.UnitTest
             _gameService.UserBet(bet);
 
             // Assert
-            Assert.NotNull(_repository.GetAll().Result);
+            Assert.NotNull(_repository.Find((int)bet.Id).Result);
         }
 
         [Test]

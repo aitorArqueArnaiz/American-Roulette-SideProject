@@ -18,7 +18,7 @@ namespace Game.Infrastructure.Data.Repositories
 
         Task<List<TEntity>> IBaseRepository<TEntity>.GetAll()
         {
-            return this.Bets.ToListAsync();
+            return this.Bets.AsQueryable().ToListAsync();
         }
 
         Task<TEntity> IBaseRepository<TEntity>.Get(int id)
@@ -40,6 +40,11 @@ namespace Game.Infrastructure.Data.Repositories
         Task<TEntity> IBaseRepository<TEntity>.Delete(int id)
         {
             throw new System.NotImplementedException();
+        }
+
+        public Task<TEntity> Find(int id)
+        {
+            return this.Bets.FirstAsync(x => x.Id == id);
         }
     }
 }
