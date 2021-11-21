@@ -15,7 +15,7 @@ namespace Game.Infrastructure.Data.Repositories
         {
         }
 
-        Task<List<TEntity>> IBaseRepository<TEntity>.GetAll()
+        public Task<List<TEntity>> GetAll()
         {
             return this.Bets.AsQueryable().ToListAsync();
         }

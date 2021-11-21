@@ -16,7 +16,7 @@ namespace Game.UnitTest
         #region class variables
 
         private IGameService _gameService;
-        private IBaseRepository<Entity> _repository;
+        private IBetRepository _repository;
 
         #endregion
 
@@ -64,7 +64,7 @@ namespace Game.UnitTest
             _gameService.UserBet(bet);
 
             // Assert
-            var result = _repository.Find((int)bet.bet.Id).Result;
+            var result = _repository.GetAllUserBets()[0];
             Assert.NotNull(result);
             Assert.AreEqual(result.Id, bet.bet.Id);
             Assert.AreEqual(result.Number, bet.bet.Number);

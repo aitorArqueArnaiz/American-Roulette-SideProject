@@ -1,19 +1,24 @@
 ﻿using Game.Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Game.Infrastructure.Data.Repositories
 {
-    public class BetRepository : BaseRepository<Entity, DbContext>
+    public class BetRepository : BaseRepository<Entity, DbContext>, IBetRepository
     {
+
         public BetRepository(DbContextOptions<BaseRepository<Entity, DbContext>> options) : base(options)
         {
         }
 
-        public void AddEntityAsync(Entity entity)
+        public void AddUserBet(Entity entity)
         {
             base.Add(entity);
+        }
+
+        public List<Entity> GetAllUserBets()
+        {
+            return base.GetAll().Result;
         }
     }
 }

@@ -14,14 +14,14 @@ namespace Game.Domain.Services
         #region variables
 
         private List<string> _zeros = new List<string>() { "0", "00" };
-        private readonly IBaseRepository<Entity> _betRepository;
+        private readonly IBetRepository _betRepository;
         private int wheel;
 
         #endregion
 
         #region Constructors
 
-        public GameService(IBaseRepository<Entity> repository) : base()
+        public GameService(IBetRepository repository) : base()
         {
             _betRepository = repository ?? throw new ArgumentNullException(nameof(repository));
             this.wheel = 0;
@@ -40,7 +40,7 @@ namespace Game.Domain.Services
         public void UserBet(Bet bet)
         {
             if (bet == null || bet.bet.type == (int)BetType.Undefined) throw new Exception($"Undefined bet type for user bet {bet.bet.Id}");
-            _betRepository.Add(bet.bet);
+            _betRepository.AddUserBet(bet.bet);
         }
 
         public double? ProcesBetDirect(Bet bet)
