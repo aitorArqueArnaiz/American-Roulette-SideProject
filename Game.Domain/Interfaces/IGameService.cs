@@ -13,7 +13,7 @@ namespace Game.Domain.Interfaces
         /// <summary>
         /// Method that saves the user bet into repository.
         /// </summary>
-        void UserBet();
+        void UserBet(Bet bet);
 
         /// <summary>
         /// Method that proceses the direct bet.

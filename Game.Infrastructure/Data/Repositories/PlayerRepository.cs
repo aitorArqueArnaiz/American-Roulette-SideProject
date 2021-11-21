@@ -2,9 +2,9 @@
 
 namespace Game.Infrastructure.Data.Repositories
 {
-    public class PlayerRepository : BaseRepository<IEntity, DbContext>
+    public class PlayerRepository : BaseRepository<Entity, DbContext>
     {
-        public PlayerRepository(DbContextOptions<BaseRepository<IEntity, DbContext>> options) : base(options)
+        public PlayerRepository(DbContextOptions<BaseRepository<Entity, DbContext>> options) : base(options)
         {
         }
     }

@@ -1,9 +1,13 @@
+using Game.Domain.Entities;
 using Game.Domain.Interfaces;
 using Game.Domain.Services;
 using Game.Infrastructure.Data;
+using Game.Infrastructure.Data.Repositories;
 using Game.Infrastructure.Interfaces;
-using Moq;
+using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
+using System;
+using static Game.Domain.Shared.Enums;
 
 namespace Game.UnitTest
 {
@@ -12,7 +16,7 @@ namespace Game.UnitTest
         #region class variables
 
         private IGameService _gameService;
-        private Mock<IBaseRepository<IEntity>> _repository;
+        private IBaseRepository<Entity> _repository;
 
         #endregion
 
@@ -21,8 +25,13 @@ namespace Game.UnitTest
         [SetUp]
         public void Setup()
         {
-            _repository = new Mock<IBaseRepository<IEntity>>();
-            _gameService = new GameService(_repository.Object);
+            var options = new DbContextOptionsBuilder<BaseRepository<Entity, DbContext>>()
+                        .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                        .EnableSensitiveDataLogging()
+                        .Options;
+
+            _repository = new BetRepository(options);
+            _gameService = new GameService(_repository);
         }
 
         [TearDown]
@@ -40,11 +49,22 @@ namespace Game.UnitTest
         public void Bet_Direct_test()
         {
             // Arrange
+            var bet = new Bet()
+            {
+                bet = new Entity()
+                {
+                    Id = 123456,
+                    Number = 36,
+                    ammount = 100,
+                    type = (int)BetType.Direct
+                }
+            };
 
             // Act
+            _gameService.UserBet(bet);
 
             // Assert
-            Assert.Pass();
+            Assert.NotNull(_repository.GetAll().Result);
         }
 
         [Test]

@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Game.Infrastructure.Interfaces
 {
-    public interface IBaseRepository<T> where T : class, IEntity
+    public interface IBaseRepository<T> where T : Entity
     {
         Task<List<T>> GetAll();
         Task<T> Get(int id);

@@ -2,7 +2,7 @@
 
 namespace Game.Infrastructure.Data
 {
-    public interface IEntity
+    public class Entity
     {
         [ForeignKey("Id")]
         public long Id { get; set; }

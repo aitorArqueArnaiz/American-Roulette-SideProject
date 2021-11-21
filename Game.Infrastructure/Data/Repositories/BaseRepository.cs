@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 namespace Game.Infrastructure.Data.Repositories
 {
     public abstract class BaseRepository<TEntity, TContext> : DbContext, IBaseRepository<TEntity>
-        where TEntity : class, IEntity
+        where TEntity : Entity
         where TContext : DbContext
     {
-        private DbSet<TEntity> Bets { get; set; }
+        public virtual DbSet<TEntity> Bets { get; set; }
 
         public BaseRepository(DbContextOptions<BaseRepository<TEntity, TContext>> options) : base(options)
         {
+            base.Set<TEntity>();
         }
 
         Task<List<TEntity>> IBaseRepository<TEntity>.GetAll()
         {
-            throw new System.NotImplementedException();
+            return this.Bets.ToListAsync();
         }
 
         Task<TEntity> IBaseRepository<TEntity>.Get(int id)
@@ -25,9 +26,10 @@ namespace Game.Infrastructure.Data.Repositories
             throw new System.NotImplementedException();
         }
 
-        public Task<TEntity> Add(TEntity entity)
+        public async Task<TEntity> Add(TEntity entity)
         {
-            throw new System.NotImplementedException();
+            this.Bets.Add(entity);
+            return entity;
         }
 
         public Task<TEntity> Update(TEntity entity)

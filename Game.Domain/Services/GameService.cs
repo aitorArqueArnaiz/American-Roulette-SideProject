@@ -4,6 +4,7 @@ using Game.Infrastructure.Data;
 using Game.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 
 namespace Game.Domain.Services
 {
@@ -12,14 +13,14 @@ namespace Game.Domain.Services
         #region variables
 
         private List<string> _zeros = new List<string>() { "0", "00" };
-        private readonly IBaseRepository<IEntity> _betRepository;
+        private readonly IBaseRepository<Entity> _betRepository;
         private int wheel;
 
         #endregion
 
         #region Constructors
 
-        public GameService(IBaseRepository<IEntity> repository) : base()
+        public GameService(IBaseRepository<Entity> repository) : base()
         {
             _betRepository = repository ?? throw new ArgumentNullException(nameof(repository));
             this.wheel = 0;
@@ -35,9 +36,9 @@ namespace Game.Domain.Services
             this.wheel = bet.Next(0, 36);
         }
 
-        public void UserBet()
+        public void UserBet(Bet bet)
         {
-
+            _betRepository.Add(bet.bet);
         }
 
         public double? ProcesBetDirect(Bet bet)

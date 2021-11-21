@@ -39,42 +39,42 @@ namespace Game.Controllers
         {
             try
             {
-                switch(bet.type)
+                switch(bet.bet.type)
                 {
-                    case BetType.Direct:
+                    case (int)BetType.Direct:
                         _gameService.ProcesBetDirect(bet);
                         break;
-                    case BetType.Divided:
+                    case (int)BetType.Divided:
                         _gameService.ProcesBetDivided(bet);
                         break;
-                    case BetType.Street:
+                    case (int)BetType.Street:
                         _gameService.ProcesBetStreet(bet);
                         break;
-                    case BetType.Corner:
+                    case (int)BetType.Corner:
                         _gameService.ProcesBetCorner(bet);
                         break;
-                    case BetType.FiveNumbers:
+                    case (int)BetType.FiveNumbers:
                         _gameService.ProcesBetFiveNumbers(bet);
                         break;
-                    case BetType.Line:
+                    case (int)BetType.Line:
                         _gameService.ProcesBetLine(bet);
                         break;
-                    case BetType.Dozen:
+                    case (int)BetType.Dozen:
                         _gameService.ProcesBetDozen(bet);
                         break;
-                    case BetType.Column:
+                    case (int)BetType.Column:
                         _gameService.ProcesBetColumn(bet);
                         break;
-                    case BetType.DoubleDozen:
+                    case (int)BetType.DoubleDozen:
                         _gameService.ProcesBetDoubleDozen(bet);
                         break;
-                    case BetType.DoubleColumn:
+                    case (int)BetType.DoubleColumn:
                         _gameService.ProcesBetDoubleColumn(bet);
                         break;
-                    case BetType.Color:
+                    case (int)BetType.Color:
                         _gameService.ProcesBetColors(bet);
                         break;
-                    case BetType.Odd:
+                    case (int)BetType.Odd:
                         _gameService.ProcesBetOdds(bet);
                         break;
                     default:
@@ -107,11 +107,11 @@ namespace Game.Controllers
 
         [HttpPut]
         [Route("UserBet")]
-        public async Task<ActionResult> Bet()
+        public async Task<ActionResult> Bet([FromBody] Bet bet)
         {
             try
             {
-                _gameService.UserBet();
+                _gameService.UserBet(bet);
                 return Ok();
             }
             catch (Exception error)
