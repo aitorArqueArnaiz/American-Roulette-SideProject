@@ -13,7 +13,7 @@ using static Game.Domain.Shared.Enums;
 namespace Game.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/roulette")]
     public class GameController : ControllerBase
     {
         #region Variables
@@ -32,48 +32,48 @@ namespace Game.Controllers
 
         #region Endpoints
 
-        [HttpGet]
-        public async Task<ActionResult> Bet(int betType, string number, string winningNumber, int bet)
+        [HttpPost]
+        public async Task<ActionResult> Bet(int betType, string number, int bet)
         {
             try
             {
                 switch(betType)
                 {
                     case (int)BetType.Direct:
-                        _gameService.BetDirect(number, winningNumber, bet);
+                        _gameService.ProcesBetDirect(number, bet);
                         break;
                     case (int)BetType.Divided:
-                        _gameService.betDivided(number);
+                        _gameService.ProcesBetDivided(number);
                         break;
                     case (int)BetType.Street:
-                        _gameService.BetStreet(number);
+                        _gameService.ProcesBetStreet(number);
                         break;
                     case (int)BetType.Corner:
-                        _gameService.BetCorner(number);
+                        _gameService.ProcesBetCorner(number);
                         break;
                     case (int)BetType.FiveNumbers:
-                        _gameService.BetFiveNumbers(number);
+                        _gameService.ProcesBetFiveNumbers(number);
                         break;
                     case (int)BetType.Line:
-                        _gameService.BetLine(number);
+                        _gameService.ProcesBetLine(number);
                         break;
                     case (int)BetType.Dozen:
-                        _gameService.betDozen(number);
+                        _gameService.ProcesBetDozen(number);
                         break;
                     case (int)BetType.Column:
-                        _gameService.BetColumn(number);
+                        _gameService.ProcesBetColumn(number);
                         break;
                     case (int)BetType.DoubleDozen:
-                        _gameService.betDoubleDozen(number);
+                        _gameService.ProcesBetDoubleDozen(number);
                         break;
                     case (int)BetType.DoubleColumn:
-                        _gameService.BetDoubleColumn(number);
+                        _gameService.ProcesBetDoubleColumn(number);
                         break;
                     case (int)BetType.Color:
-                        _gameService.BetColors(number);
+                        _gameService.ProcesBetColors(number);
                         break;
                     case (int)BetType.Odd:
-                        _gameService.BetOdds(number);
+                        _gameService.ProcesBetOdds(number);
                         break;
                     default:
                         break;

@@ -1,81 +1,100 @@
 ﻿using Game.Domain.Interfaces;
 using System;
+using System.Collections.Generic;
 
 namespace Game.Domain.Services
 {
     public class GameService : IGameService
     {
+        #region variables
+
+        private List<string> _zeros = new List<string>() { "0", "00" };
+
+        #endregion
+
+        #region Methods
+
         public int Spin()
         {
             var bet = new Random();
             return bet.Next(0, 36);
         }
 
-        public double BetDirect(string number, string winningNumber, int bet)
+        public void UserBet()
         {
-            // TODO : Check in roulette model that the betting number exists in the game.
-            if(winningNumber == number ||
-                number == "0" || 
-                number == "00")
-            {
-                return 35 * bet;
-            }
-            return 0.0;
+
         }
 
-        public double betDivided(string number)
+        public double? ProcesBetDirect(string number, int bet)
+        {
+            return 0;
+        }
+
+        public double ProcesBetDivided(string number)
         {
             return 0;
         }
 
 
-        public double BetStreet(string number)
+        public double ProcesBetStreet(string number)
         {
             return 0;
         }
 
-        public double BetCorner(string number)
+        public double ProcesBetCorner(string number)
         {
             return 0;
         }
 
-        public double BetFiveNumbers(string number)
+        public double ProcesBetFiveNumbers(string number)
         {
             return 0;
         }
 
-        public double BetLine(string number)
+        public double ProcesBetLine(string number)
         {
             return 0;
         }
 
-        public double betDozen(string number)
+        public double ProcesBetDozen(string number)
         {
             return 0;
         }
 
-        public double BetColumn(string number)
+        public double ProcesBetColumn(string number)
         {
             return 0;
         }
 
-        public double betDoubleDozen(string number)
+        public double ProcesBetDoubleDozen(string number)
         {
             return 0;
         }
 
-        public double BetDoubleColumn(string number)
+        public double ProcesBetDoubleColumn(string number)
         {
             return 0;
         }
-        public double BetColors(string number)
+        public double ProcesBetColors(string number)
         {
             return 0;
         }
 
-        public double BetOdds(string number)
+        public double ProcesBetOdds(string number)
         {
             return 0;
         }
+
+        #endregion
+
+        #region Helper Methods
+
+        private bool IsZeroWinningNumber(string bettingNumber)
+        {
+            return _zeros.Contains(bettingNumber);
+        }
+
+        #endregion
+
     }
 }

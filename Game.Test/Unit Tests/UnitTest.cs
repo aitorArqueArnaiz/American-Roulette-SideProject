@@ -39,7 +39,7 @@ namespace Game.UnitTest
             int bet = 100;
 
             // Act
-            var ammount = _gameService.BetDirect(number, "32", bet);
+            var ammount = _gameService.ProcesBetDirect(number, bet);
 
             // Assert
             Assert.NotNull(ammount);
