@@ -13,7 +13,6 @@ namespace Game.Infrastructure.Data.Repositories
 
         public BaseRepository(DbContextOptions<BaseRepository<TEntity, TContext>> options) : base(options)
         {
-            base.Set<TEntity>();
         }
 
         Task<List<TEntity>> IBaseRepository<TEntity>.GetAll()
