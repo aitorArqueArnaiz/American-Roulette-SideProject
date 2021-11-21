@@ -1,5 +1,6 @@
 using Game.Domain.Interfaces;
 using Game.Domain.Services;
+using Game.Infrastructure.Data;
 using Game.Infrastructure.Data.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,7 +39,7 @@ namespace Game
             });
 
             // Add application services.
-            var contextOptions = new DbContextOptionsBuilder<BaseRepository>();
+            var contextOptions = new DbContextOptionsBuilder<BaseRepository<IEntity, DbContext>>();
             services.Add(new ServiceDescriptor(typeof(IGameService), new GameService(new BetRepository(contextOptions.Options))));
 
 

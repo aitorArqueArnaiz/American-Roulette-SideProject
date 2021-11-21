@@ -1,24 +1,43 @@
 ﻿using Game.Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Game.Infrastructure.Data.Repositories
 {
-    public class BaseRepository : DbContext, IBaseRepository
+    public abstract class BaseRepository<TEntity, TContext> : DbContext, IBaseRepository<TEntity>
+        where TEntity : class, IEntity
+        where TContext : DbContext
     {
-        private DbSet<Bet> Bets { get; set; }
+        private DbSet<TEntity> Bets { get; set; }
 
-        public BaseRepository(DbContextOptions<BaseRepository> options) : base(options)
+        public BaseRepository(DbContextOptions<BaseRepository<TEntity, TContext>> options) : base(options)
         {
         }
-    }
 
-    internal class Bet
-    {
-        [ForeignKey("Id")]
-        public long Id { get; set; }
-        public int Number { get; set; }
-        public double ammount { get; set; }
-        public int type { get; set; }
+        Task<List<TEntity>> IBaseRepository<TEntity>.GetAll()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<TEntity> IBaseRepository<TEntity>.Get(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<TEntity> Add(TEntity entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Task<TEntity> Update(TEntity entity)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        Task<TEntity> IBaseRepository<TEntity>.Delete(int id)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -1,15 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Game.Infrastructure.Data.Repositories
 {
-    public class GameRepository : BaseRepository
+    public class GameRepository : BaseRepository<IEntity, DbContext>
     {
-        public GameRepository(DbContextOptions<BaseRepository> options) : base(options)
+        public GameRepository(DbContextOptions<BaseRepository<IEntity, DbContext>> options) : base(options)
         {
         }
     }

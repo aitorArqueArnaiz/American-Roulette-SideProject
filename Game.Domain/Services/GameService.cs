@@ -1,5 +1,6 @@
 ﻿using Game.Domain.Entities;
 using Game.Domain.Interfaces;
+using Game.Infrastructure.Data;
 using Game.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,14 +12,14 @@ namespace Game.Domain.Services
         #region variables
 
         private List<string> _zeros = new List<string>() { "0", "00" };
-        private readonly IBaseRepository _betRepository;
+        private readonly IBaseRepository<IEntity> _betRepository;
         private int wheel;
 
         #endregion
 
         #region Constructors
 
-        public GameService(IBaseRepository repository) : base()
+        public GameService(IBaseRepository<IEntity> repository) : base()
         {
             _betRepository = repository ?? throw new ArgumentNullException(nameof(repository));
             this.wheel = 0;

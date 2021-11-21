@@ -34,6 +34,7 @@ namespace Game.Controllers
         #region Endpoints
 
         [HttpPost]
+        [Route("ProcesUserBets")]
         public async Task<ActionResult> ProcesBet([FromBody] Bet bet)
         {
             try
@@ -89,6 +90,7 @@ namespace Game.Controllers
         }
 
         [HttpGet]
+        [Route("Wheel")]
         public async Task<ActionResult> Wheel()
         {
             try
@@ -104,6 +106,7 @@ namespace Game.Controllers
         }
 
         [HttpPut]
+        [Route("UserBet")]
         public async Task<ActionResult> Bet()
         {
             try
