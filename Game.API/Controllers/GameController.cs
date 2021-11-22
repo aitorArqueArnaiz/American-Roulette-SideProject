@@ -49,7 +49,7 @@ namespace Game.Controllers
             try
             {
                 // List of players and their corresponding wins
-                List<PlayerBetsResponse> response = new List<PlayerBetsResponse>() { };
+                List<PlayerBetResponse> response = new List<PlayerBetResponse>() { };
 
                 // Get all the player bets from the repository
                 var playerBets = _gameService.GetAllPlayerBets();
@@ -100,7 +100,7 @@ namespace Game.Controllers
                         default:
                             break;
                     }
-                    response.Add(new PlayerBetsResponse() { playerId = playerBet.Id,  playerWin = playerWin});
+                    response.Add(new PlayerBetResponse() { playerId = playerBet.Id,  playerWin = playerWin});
                 }
                 return Ok(response);
             }

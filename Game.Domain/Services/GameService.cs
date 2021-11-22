@@ -118,7 +118,8 @@
 
         public double? ProcesBetDirect(Bet bet)
         {
-            if (!this.CheckBetIsValid(bet) && this.CheckNumberIsValidInRouletteModel(bet))
+            if (!this.CheckBetIsValid(bet) && 
+                this.CheckNumberIsValidInRouletteModel(bet))
             {
                 throw new Exception($"Undefined bet type for user bet {bet.bet.Id}");
             }
