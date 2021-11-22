@@ -11,6 +11,12 @@ namespace Game.Domain.Interfaces
         void Wheel();
 
         /// <summary>
+        /// Method that returns the last winning value of thw roulette.
+        /// </summary>
+        /// <returns></returns>
+        public int GetWheelValue();
+
+        /// <summary>
         /// Method that saves the user bet into repository.
         /// </summary>
         void UserBet(Bet bet);

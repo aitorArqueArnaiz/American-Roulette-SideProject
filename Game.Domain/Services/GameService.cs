@@ -231,6 +231,11 @@
             return false;
         }
 
+        public int GetWheelValue()
+        {
+            return this.wheel;
+        }
+
         #endregion
 
     }

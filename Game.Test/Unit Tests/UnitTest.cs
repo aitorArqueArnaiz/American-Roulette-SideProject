@@ -17,6 +17,7 @@ namespace Roulette.UnitTest
 
         private IGameService _gameService;
         private IBetRepository _repository;
+        private const int _directBetPayback = 35;
 
         #endregion
 
@@ -27,7 +28,7 @@ namespace Roulette.UnitTest
         {
             //  Create DB context options
             var options = new DbContextOptionsBuilder<BaseRepository<Entity, DbContext>>()
-                        .UseInMemoryDatabase(Guid.NewGuid().ToString())
+                        .UseInMemoryDatabase("TestDB")
                         .EnableSensitiveDataLogging()
                         .Options;
 
@@ -105,11 +106,25 @@ namespace Roulette.UnitTest
         public void Bet_Direct_test()
         {
             // Arrange
+            var bet = new Bet()
+            {
+                bet = new Entity()
+                {
+                    Id = 123456,
+                    Number = 36,
+                    ammount = 500,
+                    type = (int)BetType.Direct
+                }
+            };
 
             // Act
+            _gameService.Wheel();
+            bet.bet.Number = _gameService.GetWheelValue();
+            double? win = _gameService.ProcesBetDirect(bet);
 
             // Assert
-            Assert.Pass();
+            Assert.NotNull(win);
+            Assert.AreEqual(_directBetPayback * bet.bet.ammount, win, $"Expected {_directBetPayback * bet.bet.ammount}, but received {win}");
         }
 
         [Test]
