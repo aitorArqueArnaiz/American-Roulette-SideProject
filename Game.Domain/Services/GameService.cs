@@ -1,10 +1,8 @@
 ﻿using Game.Domain.Entities;
 using Game.Domain.Interfaces;
-using Game.Infrastructure.Data;
 using Game.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Dynamic;
 using static Game.Domain.Shared.Enums;
 
 namespace Game.Domain.Services
@@ -39,13 +37,25 @@ namespace Game.Domain.Services
 
         public void UserBet(Bet bet)
         {
-            if (bet == null || bet.bet.type == (int)BetType.Undefined) throw new Exception($"Undefined bet type for user bet {bet.bet.Id}");
+            if (this.CheckBetISValid(bet))
+            {
+                throw new Exception($"Undefined bet type for user bet {bet.bet.Id}");
+            }
             _betRepository.AddUserBet(bet.bet);
         }
 
         public double? ProcesBetDirect(Bet bet)
         {
-            return 0;
+            if (this.CheckBetISValid(bet))
+            {
+                throw new Exception($"Undefined bet type for user bet {bet.bet.Id}");
+            }
+            
+            if (bet.bet.Number == this.wheel)
+            {
+                return bet.bet.ammount * 35;
+            }
+            return 0.0;
         }
 
         public double ProcesBetDivided(Bet bet)
@@ -110,6 +120,15 @@ namespace Game.Domain.Services
         private bool IsZeroWinningNumber(string bettingNumber)
         {
             return _zeros.Contains(bettingNumber);
+        }
+
+        private bool CheckBetISValid(Bet userBet)
+        {
+            if (userBet == null || userBet.bet.type == (int)BetType.Undefined)
+            {
+                return false;
+            }
+            return true;
         }
 
         #endregion

@@ -1,16 +1,16 @@
-using Game.Domain.Entities;
-using Game.Domain.Interfaces;
-using Game.Domain.Services;
-using Game.Infrastructure.Data;
-using Game.Infrastructure.Data.Repositories;
-using Game.Infrastructure.Interfaces;
-using Microsoft.EntityFrameworkCore;
-using NUnit.Framework;
-using System;
-using static Game.Domain.Shared.Enums;
-
-namespace Game.UnitTest
+namespace Roulette.UnitTest
 {
+    using Game.Domain.Entities;
+    using Game.Domain.Interfaces;
+    using Game.Domain.Services;
+    using Game.Infrastructure.Data;
+    using Game.Infrastructure.Data.Repositories;
+    using Game.Infrastructure.Interfaces;
+    using Microsoft.EntityFrameworkCore;
+    using NUnit.Framework;
+    using System;
+    using static Game.Domain.Shared.Enums;
+
     public class UnitTest
     {
         #region class variables
@@ -25,18 +25,24 @@ namespace Game.UnitTest
         [SetUp]
         public void Setup()
         {
+            //  Create DB context options
             var options = new DbContextOptionsBuilder<BaseRepository<Entity, DbContext>>()
                         .UseInMemoryDatabase(Guid.NewGuid().ToString())
                         .EnableSensitiveDataLogging()
                         .Options;
 
+            // Initiañlize in memmory repository
             _repository = new BetRepository(options);
+
+            // Initialize the game service
             _gameService = new GameService(_repository);
         }
 
         [TearDown]
         public void TearDown()
         {
+            _gameService = null;
+            _repository = null;
         }
 
         #endregion
@@ -98,6 +104,12 @@ namespace Game.UnitTest
         [Description("Bet direct use case")]
         public void Bet_Direct_test()
         {
+            // Arrange
+
+            // Act
+
+            // Assert
+            Assert.Pass();
         }
 
         [Test]

@@ -1,7 +1,7 @@
-using NUnit.Framework;
-
-namespace Game.IntegrationTest
+namespace Roulette.IntegrationTest
 {
+    using NUnit.Framework;
+
     public class IntegrationTest
     {
         #region Variables & properties
