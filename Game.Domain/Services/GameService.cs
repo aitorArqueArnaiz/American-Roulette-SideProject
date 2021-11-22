@@ -12,9 +12,25 @@
     {
         #region variables
 
+        /// <summary>
+        /// List that represents the zer's of roulette table game.
+        /// </summary>
         private List<string> _zeros = new List<string>() { "0", "00" };
+
+        /// <summary>
+        /// Bet repository.
+        /// </summary>
         private readonly IBetRepository _betRepository;
+
+        /// <summary>
+        /// Wheel value.
+        /// </summary>
         private int wheel;
+
+        /// <summary>
+        /// Direc bet payback for user.
+        /// </summary>
+        private const int _directBetPayback = 35;
 
         #endregion
 
@@ -54,7 +70,7 @@
             
             if (bet.bet.Number == this.wheel || this.IsZeroWinningNumber(bet.bet.Number.ToString()))
             {
-                return bet.bet.ammount * 35;
+                return bet.bet.ammount * _directBetPayback;
             }
             return 0.0;
         }
