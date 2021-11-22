@@ -124,7 +124,8 @@ namespace Roulette.UnitTest
 
             // Assert
             Assert.NotNull(win);
-            Assert.AreEqual(_directBetPayback * bet.bet.ammount, win, $"Expected {_directBetPayback * bet.bet.ammount}, but received {win}");
+            Assert.AreEqual(_directBetPayback * bet.bet.ammount, win, 
+                           $"Expected {_directBetPayback * bet.bet.ammount}, but received {win}");
         }
 
         [Test]

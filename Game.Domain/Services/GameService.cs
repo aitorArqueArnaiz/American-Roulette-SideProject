@@ -236,6 +236,24 @@
             return this.wheel;
         }
 
+        public List<Bet> GetAllPlayerBets()
+        {
+            var response = new List<Bet>();
+            var playerBets = _betRepository.GetAllUserBets();
+
+            foreach(var playerBet in playerBets)
+            {
+                var bet = new Bet();
+                bet.bet.Id = playerBet.Id;
+                bet.bet.Number = playerBet.Number;
+                bet.bet.type = playerBet.type;
+                bet.bet.ammount = playerBet.ammount;
+
+                response.Add(bet);
+            }
+            return response;
+        }
+
         #endregion
 
     }

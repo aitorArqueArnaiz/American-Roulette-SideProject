@@ -1,5 +1,6 @@
 ﻿
 using Game.Domain.Entities;
+using System.Collections.Generic;
 
 namespace Game.Domain.Interfaces
 {
@@ -20,6 +21,12 @@ namespace Game.Domain.Interfaces
         /// Method that saves the user bet into repository.
         /// </summary>
         void UserBet(Bet bet);
+
+        /// <summary>
+        /// Method that get all the player bets existing in the data base.
+        /// </summary>
+        /// <returns></returns>
+        List<Bet> GetAllPlayerBets();
 
         /// <summary>
         /// Method that proceses the direct bet.
