@@ -3,11 +3,13 @@
 /// </summary>
 
 
+using Game.API.DTOs;
 using Game.Domain.Entities;
 using Game.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using static Game.Domain.Shared.Enums;
 
@@ -46,8 +48,13 @@ namespace Game.Controllers
         {
             try
             {
+                // List of players and their corresponding wins
+                List<PlayerBetsResponse> response = new List<PlayerBetsResponse>() { };
+
                 // Get all the player bets from the repository
                 var playerBets = _gameService.GetAllPlayerBets();
+
+                double? playerWin = 0.0;
 
                 // process each player bet and proces the win.
                 foreach(var playerBet in playerBets)
@@ -55,46 +62,47 @@ namespace Game.Controllers
                     switch (playerBet.bet.type)
                     {
                         case (int)BetType.Direct:
-                            _gameService.ProcesBetDirect(playerBet);
+                            playerWin = _gameService.ProcesBetDirect(playerBet);
                             break;
                         case (int)BetType.Divided:
-                            _gameService.ProcesBetDivided(playerBet);
+                            playerWin = _gameService.ProcesBetDivided(playerBet);
                             break;
                         case (int)BetType.Street:
-                            _gameService.ProcesBetStreet(playerBet);
+                            playerWin = _gameService.ProcesBetStreet(playerBet);
                             break;
                         case (int)BetType.Corner:
-                            _gameService.ProcesBetCorner(playerBet);
+                            playerWin = _gameService.ProcesBetCorner(playerBet);
                             break;
                         case (int)BetType.FiveNumbers:
-                            _gameService.ProcesBetFiveNumbers(playerBet);
+                            playerWin = _gameService.ProcesBetFiveNumbers(playerBet);
                             break;
                         case (int)BetType.Line:
-                            _gameService.ProcesBetLine(playerBet);
+                            playerWin = _gameService.ProcesBetLine(playerBet);
                             break;
                         case (int)BetType.Dozen:
-                            _gameService.ProcesBetDozen(playerBet);
+                            playerWin = _gameService.ProcesBetDozen(playerBet);
                             break;
                         case (int)BetType.Column:
-                            _gameService.ProcesBetColumn(playerBet);
+                            playerWin = _gameService.ProcesBetColumn(playerBet);
                             break;
                         case (int)BetType.DoubleDozen:
-                            _gameService.ProcesBetDoubleDozen(playerBet);
+                            playerWin = _gameService.ProcesBetDoubleDozen(playerBet);
                             break;
                         case (int)BetType.DoubleColumn:
-                            _gameService.ProcesBetDoubleColumn(playerBet);
+                            playerWin = _gameService.ProcesBetDoubleColumn(playerBet);
                             break;
                         case (int)BetType.Color:
-                            _gameService.ProcesBetColors(playerBet);
+                            playerWin = _gameService.ProcesBetColors(playerBet);
                             break;
                         case (int)BetType.Odd:
-                            _gameService.ProcesBetOdds(playerBet);
+                            playerWin = _gameService.ProcesBetOdds(playerBet);
                             break;
                         default:
                             break;
                     }
+                    response.Add(new PlayerBetsResponse() { playerId = playerBet.Id,  playerWin = playerWin});
                 }
-                return Ok();
+                return Ok(response);
             }
             catch (Exception error)
             {
