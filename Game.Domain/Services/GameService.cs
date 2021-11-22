@@ -1,12 +1,13 @@
-﻿using Game.Domain.Entities;
-using Game.Domain.Interfaces;
-using Game.Infrastructure.Interfaces;
-using System;
-using System.Collections.Generic;
-using static Game.Domain.Shared.Enums;
-
-namespace Game.Domain.Services
+﻿namespace Game.Domain.Services
 {
+    using Game.Domain.Entities;
+    using Game.Domain.Interfaces;
+    using Game.Domain.model;
+    using Game.Infrastructure.Interfaces;
+    using System;
+    using System.Collections.Generic;
+    using static Game.Domain.Shared.Enums;
+
     public class GameService : IGameService
     {
         #region variables
@@ -37,7 +38,7 @@ namespace Game.Domain.Services
 
         public void UserBet(Bet bet)
         {
-            if (this.CheckBetISValid(bet))
+            if (!this.CheckBetIsValid(bet))
             {
                 throw new Exception($"Undefined bet type for user bet {bet.bet.Id}");
             }
@@ -46,12 +47,12 @@ namespace Game.Domain.Services
 
         public double? ProcesBetDirect(Bet bet)
         {
-            if (this.CheckBetISValid(bet))
+            if (!this.CheckBetIsValid(bet) && this.CheckNumberIsValidInRouletteModel(bet))
             {
                 throw new Exception($"Undefined bet type for user bet {bet.bet.Id}");
             }
             
-            if (bet.bet.Number == this.wheel)
+            if (bet.bet.Number == this.wheel || this.IsZeroWinningNumber(bet.bet.Number.ToString()))
             {
                 return bet.bet.ammount * 35;
             }
@@ -117,18 +118,45 @@ namespace Game.Domain.Services
 
         #region Helper Methods
 
+        /// <summary>
+        /// Method that checks if user bet number is "0" or either "00".
+        /// </summary>
+        /// <param name="bettingNumber"></param>
+        /// <returns>True if number is "0" or "00"</returns>
         private bool IsZeroWinningNumber(string bettingNumber)
         {
             return _zeros.Contains(bettingNumber);
         }
 
-        private bool CheckBetISValid(Bet userBet)
+        /// <summary>
+        /// Method that checks that user bet type is valid.
+        /// </summary>
+        /// <param name="userBet"></param>
+        /// <returns>True if user bet type is valid.</returns>
+        private bool CheckBetIsValid(Bet userBet)
         {
             if (userBet == null || userBet.bet.type == (int)BetType.Undefined)
             {
                 return false;
             }
             return true;
+        }
+
+        /// <summary>
+        /// Method that checks that a betting number exists in roulette model.
+        /// </summary>
+        /// <param name="userBet"></param>
+        /// <returns>True if number exists in roulette table.</returns>
+        private bool CheckNumberIsValidInRouletteModel(Bet userBet)
+        {
+            foreach(var item in Roulette.roulette)
+            {
+                if(item.Value.value == userBet.bet.Number.ToString())
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         #endregion
