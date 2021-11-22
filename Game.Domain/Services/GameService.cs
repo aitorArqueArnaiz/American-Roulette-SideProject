@@ -32,6 +32,61 @@
         /// </summary>
         private const int _directBetPayback = 35;
 
+        /// <summary>
+        /// Horse bet payback for user.
+        /// </summary>
+        private const int _horseBetPayback = 17;
+
+        /// <summary>
+        /// Transversal bet payback for user.
+        /// </summary>
+        private const int _transversalBetPayback = 11;
+
+        /// <summary>
+        /// Corner bet payback for user.
+        /// </summary>
+        private const int _cornerBetPayback = 8;
+
+        /// <summary>
+        /// Five bet payback for user.
+        /// </summary>
+        private const int _fiveBetPayback = 6;
+
+        /// <summary>
+        /// Line bet payback for user.
+        /// </summary>
+        private const int _lineBetPayback = 5;
+
+        /// <summary>
+        /// Dozen bet payback for user.
+        /// </summary>
+        private const int _dozenBetPayback = 2;
+
+        /// <summary>
+        /// Column bet payback for user.
+        /// </summary>
+        private const int _columnBetPayback = 2;
+
+        /// <summary>
+        /// Double dozen bet payback for user.
+        /// </summary>
+        private const double _doubleDozenBetPayback = 0.5;
+
+        /// <summary>
+        /// Double column bet payback for user.
+        /// </summary>
+        private const double _doubleColumnBetPayback = 0.5;
+
+        /// <summary>
+        /// Colors bet payback for user.
+        /// </summary>
+        private const int _colorsBetPayback = 1;
+
+        /// <summary>
+        /// Odds bet payback for user.
+        /// </summary>
+        private const int _oddsBetPayback = 1;
+
         #endregion
 
         #region Constructors
@@ -68,16 +123,17 @@
                 throw new Exception($"Undefined bet type for user bet {bet.bet.Id}");
             }
             
-            if (bet.bet.Number == this.wheel || this.IsZeroWinningNumber(bet.bet.Number.ToString()))
+            if (bet.bet.Number == this.wheel || 
+                this.IsZeroWinningNumber(bet.bet.Number.ToString()))
             {
                 return bet.bet.ammount * _directBetPayback;
             }
             return 0.0;
         }
 
-        public double ProcesBetDivided(Bet bet)
+        public double? ProcesBetDivided(Bet bet)
         {
-            return 0;
+            return 0.0;
         }
 
 

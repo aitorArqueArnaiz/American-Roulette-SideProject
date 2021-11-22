@@ -27,7 +27,7 @@ namespace Game.Domain.Interfaces
         /// </summary>
         /// <param name="bet"></param>
         /// <returns>The winning ammount or zero.</returns>
-        double ProcesBetDivided(Bet bet);
+        double? ProcesBetDivided(Bet bet);
 
         /// <summary>
         /// Method that proceses the street bet.
