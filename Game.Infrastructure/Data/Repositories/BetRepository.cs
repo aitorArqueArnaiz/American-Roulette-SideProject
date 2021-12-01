@@ -11,6 +11,10 @@ namespace Game.Infrastructure.Data.Repositories
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+        }
+
         public void AddUserBet(Entity entity)
         {
             base.Add(entity);

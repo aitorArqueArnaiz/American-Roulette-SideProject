@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Game.Infrastructure.Data.Repositories
 {
-    public abstract class BaseRepository<TEntity, TContext> : DbContext, IBaseRepository<TEntity>
+    public class BaseRepository<TEntity, TContext> : DbContext, IBaseRepository<TEntity>
         where TEntity : Entity
         where TContext : DbContext
     {
@@ -14,6 +14,12 @@ namespace Game.Infrastructure.Data.Repositories
         public BaseRepository(DbContextOptions<BaseRepository<TEntity, TContext>> options) : base(options)
         {
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder.UseInMemoryDatabase("TestDB").EnableSensitiveDataLogging());
+        }
+
 
         public Task<List<TEntity>> GetAll()
         {

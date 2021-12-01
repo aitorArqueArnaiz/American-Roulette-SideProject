@@ -134,57 +134,57 @@
 
         public double? ProcesBetDivided(Bet bet)
         {
-            return 0.0;
+            throw new NotImplementedException("Method not implemented");
         }
 
 
         public double ProcesBetStreet(Bet bet)
         {
-            return 0;
+            throw new NotImplementedException("Method not implemented");
         }
 
         public double ProcesBetCorner(Bet bet)
         {
-            return 0;
+            throw new NotImplementedException("Method not implemented");
         }
 
         public double ProcesBetFiveNumbers(Bet bet)
         {
-            return 0;
+            throw new NotImplementedException("Method not implemented");
         }
 
         public double ProcesBetLine(Bet bet)
         {
-            return 0;
+            throw new NotImplementedException("Method not implemented");
         }
 
         public double ProcesBetDozen(Bet bet)
         {
-            return 0;
+            throw new NotImplementedException("Method not implemented");
         }
 
         public double ProcesBetColumn(Bet bet)
         {
-            return 0;
+            throw new NotImplementedException("Method not implemented");
         }
 
         public double ProcesBetDoubleDozen(Bet bet)
         {
-            return 0;
+            throw new NotImplementedException("Method not implemented");
         }
 
         public double ProcesBetDoubleColumn(Bet bet)
         {
-            return 0;
+            throw new NotImplementedException("Method not implemented");
         }
         public double ProcesBetColors(Bet bet)
         {
-            return 0;
+            throw new NotImplementedException("Method not implemented");
         }
 
         public double ProcesBetOdds(Bet bet)
         {
-            return 0;
+            throw new NotImplementedException("Method not implemented");
         }
 
         #endregion
