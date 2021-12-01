@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Game.Domain.Entities
+namespace Game.Infrastructure.Data
 {
     public class BaseEntity
     {

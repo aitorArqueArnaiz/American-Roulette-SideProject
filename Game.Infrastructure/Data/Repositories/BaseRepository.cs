@@ -9,7 +9,10 @@ namespace Game.Infrastructure.Data.Repositories
         where TEntity : Entity
         where TContext : DbContext
     {
-        public virtual DbSet<TEntity> Bets { get; set; }
+        /// <summary>
+        /// The DbSet in memmory repository in order to save the player bets
+        /// </summary>
+        public virtual DbSet<TEntity> _playerBets { get; set; }
 
         public BaseRepository(DbContextOptions<BaseRepository<TEntity, TContext>> options) : base(options)
         {
@@ -21,36 +24,38 @@ namespace Game.Infrastructure.Data.Repositories
         }
 
 
-        public Task<List<TEntity>> GetAll()
+        public async Task<List<TEntity>> GetAll()
         {
-            return this.Bets.AsQueryable().ToListAsync();
+            return await this._playerBets.AsQueryable().ToListAsync();
         }
 
         public void Add(TEntity entity)
         {
-            this.Bets.Add(entity);
+            this._playerBets.Add(entity);
             base.SaveChanges();
         }
 
         public void AddRange(List<Entity> userBets)
         {
-            this.Bets.AddRange((IEnumerable<TEntity>)userBets);
+            this._playerBets.AddRange((IEnumerable<TEntity>)userBets);
             base.SaveChanges();
         }
 
         public void Update(TEntity entity)
         {
-            this.Bets.Update(entity);
+            this._playerBets.Update(entity);
+            base.SaveChanges();
         }
 
         public void Delete(TEntity entity)
         {
-            this.Bets.Remove(entity);
+            this._playerBets.Remove(entity);
+            base.SaveChanges();
         }
 
-        public Task<TEntity> Find(int id)
+        public async Task<TEntity> Find(int id)
         {
-            return this.Bets.SingleAsync(x => x.Id == id);
+            return await this._playerBets.SingleAsync(x => x.Id == id);
         }
     }
 }
