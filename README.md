@@ -7,7 +7,7 @@ for more information : https://en.wikipedia.org/wiki/Roulette
 # Casino online
 Casino online : https://help.partycasino.es/es/casino-help/roulette/ivyamericanroulette
 
-Steps of Desingn and implementation :
+#Steps of Desingn and implementation :
 
 	- Divide game in modules (API, Domain, Infrastructure, ...).
 	- Add README.md file and docker basics.
