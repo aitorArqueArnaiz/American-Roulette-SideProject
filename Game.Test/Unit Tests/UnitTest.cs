@@ -7,6 +7,7 @@ namespace Roulette.UnitTest
     using Game.Infrastructure.Data.Repositories;
     using Game.Infrastructure.Interfaces;
     using Microsoft.EntityFrameworkCore;
+    using Moq;
     using NUnit.Framework;
     using System;
     using static Game.Domain.Shared.Enums;
@@ -16,7 +17,7 @@ namespace Roulette.UnitTest
         #region class variables
 
         private IGameService _gameService;
-        private IBetRepository _repository;
+        private Mock<IBetRepository> _repository;
         private const int _directBetPayback = 35;
 
         #endregion
@@ -33,10 +34,10 @@ namespace Roulette.UnitTest
                         .Options;
 
             // Initiañlize in memmory repository
-            _repository = new BetRepository(options);
+            _repository = new Mock<IBetRepository>();
 
             // Initialize the game service
-            _gameService = new GameService(_repository);
+            _gameService = new GameService(_repository.Object);
         }
 
         [TearDown]
@@ -71,7 +72,7 @@ namespace Roulette.UnitTest
             _gameService.UserBet(bet);
 
             // Assert
-            var result = _repository.GetAllUserBets()[0];
+            var result = _repository.Object.GetAllUserBets()[0];
             Assert.NotNull(result);
             Assert.AreEqual(result.Id, bet.bet.Id);
             Assert.AreEqual(result.Number, bet.bet.Number);

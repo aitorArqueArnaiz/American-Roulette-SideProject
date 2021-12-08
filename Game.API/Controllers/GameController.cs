@@ -4,7 +4,6 @@
 
 
 using Game.API.DTOs;
-using Game.Domain.Entities;
 using Game.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -44,12 +43,12 @@ namespace Game.Controllers
 
         [HttpPost]
         [Route("proces-player-bets")]
-        public async Task<ActionResult> ProcesBet()
+        public async Task<ActionResult> ProcesBet([FromBody] ProcessPlayerBetsrequest request)
         {
             try
             {
                 // List of players and their corresponding wins
-                List<PlayerBetResponse> response = new List<PlayerBetResponse>() { };
+                List<ProcessPlayerBetsResponse> response = new List<ProcessPlayerBetsResponse>() { };
 
                 // Get all the player bets from the repository
                 var playerBets = await Task.Run(() => _gameService.GetAllPlayerBets());
@@ -100,7 +99,7 @@ namespace Game.Controllers
                         default:
                             break;
                     }
-                    response.Add(new PlayerBetResponse() { playerId = playerBet.Id,  playerWin = playerWin});
+                    response.Add(new ProcessPlayerBetsResponse() { playerId = playerBet.Id,  playerWin = playerWin});
                 }
                 return Ok(response);
             }
@@ -113,7 +112,7 @@ namespace Game.Controllers
 
         [HttpGet]
         [Route("wheel")]
-        public async Task<ActionResult> Wheel()
+        public async Task<ActionResult> Wheel([FromHeader] WheelRequest request)
         {
             try
             {
@@ -129,11 +128,11 @@ namespace Game.Controllers
 
         [HttpPut]
         [Route("player-bet")]
-        public async Task<ActionResult> Bet([FromBody] Bet bet)
+        public async Task<ActionResult> Bet([FromBody] PlayerBetRequest request)
         {
             try
             {
-                await Task.Run(() => _gameService.UserBet(bet));
+                await Task.Run(() => _gameService.UserBet(request.PlayerBet));
                 return Ok();
             }
             catch (Exception error)
