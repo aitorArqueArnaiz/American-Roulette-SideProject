@@ -52,7 +52,7 @@ namespace Game.Controllers
                 List<PlayerBetResponse> response = new List<PlayerBetResponse>() { };
 
                 // Get all the player bets from the repository
-                var playerBets = _gameService.GetAllPlayerBets();
+                var playerBets = await Task.Run(() => _gameService.GetAllPlayerBets());
 
                 double? playerWin = 0.0;
 
@@ -117,7 +117,7 @@ namespace Game.Controllers
         {
             try
             {
-                _gameService.Wheel();
+                await Task.Run(() => _gameService.Wheel());
                 return Ok();
             }
             catch (Exception error)
@@ -133,7 +133,7 @@ namespace Game.Controllers
         {
             try
             {
-                _gameService.UserBet(bet);
+                await Task.Run(() => _gameService.UserBet(bet));
                 return Ok();
             }
             catch (Exception error)

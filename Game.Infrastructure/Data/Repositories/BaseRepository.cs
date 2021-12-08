@@ -10,7 +10,7 @@ namespace Game.Infrastructure.Data.Repositories
         where TContext : DbContext
     {
         /// <summary>
-        /// The DbSet in memmory repository in order to save the player bets
+        /// The DbSet in memmory repository in order to save the player bets.
         /// </summary>
         public virtual DbSet<TEntity> _playerBets { get; set; }
 
