@@ -1,0 +1,1 @@
+﻿Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=Roulette;Integrated Security=true;
